@@ -8,25 +8,32 @@
   };
 
   Board.prototype.render = function(){
+    var htmlRender = "<pre>"
     for(var y = 0; y < this.yBOUNDS; y++){
       var row = ""
       for( var x = 0; x < this.xBOUNDS; x++){
         var pos = [x,y];
-
+        var snakePresence = false;
         for (var i=0; i<this.snake.segments.length; i++) {
           var segment = this.snake.segments[i];
 
           if (SnakeGame.Coords.equals(pos, segment)){
             row += "S";
+            snakePresence = true;
             break;
           }
         }
 
-        row += ".";
+        if (!snakePresence) {
+          row += ".";
+        }
+        
       }
-
-      console.log(row);
+      htmlRender += row + "\n";
+      // console.log(row);
     }
+    htmlRender += "<pre>";
+    return htmlRender;
   }
 
 })();

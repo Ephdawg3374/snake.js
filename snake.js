@@ -8,14 +8,14 @@
   };
 
   var DIRECTIONS = {
-    "N": [ 0, 1],
-    "S": [ 0,-1],
+    "N": [ 0,-1],
+    "S": [ 0, 1],
     "E": [ 1, 0],
     "W": [-1, 0]
   };
 
   Snake.prototype.move = function () {
-    var newHead = Coors.plus(this.segments[0], DIRECTIONS[this.dir]);
+    var newHead = Coords.plus(this.segments[0], DIRECTIONS[this.dir]);
 
     this.segments.unshift(newHead);
     this.segments.pop();
@@ -45,8 +45,8 @@
   };
 
   Coords.isOpposite = function(dir, prevDir){
-    var dirVec = DIRECTION[dir];
-    var prevDirVec = DIRECTION[prevDir];
+    var dirVec = DIRECTIONS[dir];
+    var prevDirVec = DIRECTIONS[prevDir];
 
     if (dirVec[0] + prevDirVec[0] === 0 && dirVec[1] + prevDirVec[1] === 0){
       return true;

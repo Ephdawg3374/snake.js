@@ -1,0 +1,29 @@
+html, body, main, ul, li, h1 {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  width: 100px;
+  height: 180px;
+  margin: auto;
+  border: 1px solid black;
+}
